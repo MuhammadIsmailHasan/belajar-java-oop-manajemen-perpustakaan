@@ -2,8 +2,8 @@ package entity;
 
 public enum TransactionStatus {
 
-    ACTIVE ("Book is not return"),
-    NONACTIVE ("Book already return");
+    ACTIVE ("Book has been borrowing"),
+    NONACTIVE ("Book was returned");
 
     private String description;
 

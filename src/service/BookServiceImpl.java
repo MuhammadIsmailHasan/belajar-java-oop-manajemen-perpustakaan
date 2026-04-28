@@ -1,7 +1,6 @@
 package service;
 
 import entity.Book;
-import repository.BookRepository;
 import repository.BookRepositoryImpl;
 
 public class BookServiceImpl implements BookService {
@@ -23,6 +22,7 @@ public class BookServiceImpl implements BookService {
                 nomor++;
             }
         }
+        System.out.println();
     }
 
     @Override
@@ -30,13 +30,38 @@ public class BookServiceImpl implements BookService {
         bookRepository.save(book);
     }
 
+    private int booksLength() {
+        int length = 0;
+        for (Book book : bookRepository.getAll()) {
+            if (book != null) {
+                length++;
+            }
+        }
+
+        return length;
+    }
+
     @Override
     public void removeBook(int number) {
-        boolean result = bookRepository.remove(number);
-        if (result) {
-            System.out.println("Berhasil menghapus dengan urutan: " + number);
+        if (number <= booksLength() && number > 0) {
+            boolean result = bookRepository.remove(number);
+            if (result) {
+                System.out.println("Successes delete with number: " + number);
+            } else {
+                System.out.println("Failed! on number: " + number);
+            }
         } else {
-            System.out.println("Gagal! menghapus urutan: " + number);
+            System.out.println("Number is not valid!");
+        }
+    }
+
+    @Override
+    public void checkStock(int number) {
+        if (number <= booksLength() && number > 0) {
+            int stock = bookRepository.checkStock(number);
+            System.out.println("Current stock is: " + stock);
+        } else {
+            System.out.println("Number is not valid!");
         }
     }
 }

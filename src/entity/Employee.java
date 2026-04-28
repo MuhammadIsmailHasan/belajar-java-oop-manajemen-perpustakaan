@@ -1,14 +1,14 @@
 package entity;
 
 public class Employee {
-    private long nip;
+    private int nip;
     private String name;
 
     public long getNip() {
         return nip;
     }
 
-    public void setNip(long nip) {
+    public void setNip(int nip) {
         this.nip = nip;
     }
 

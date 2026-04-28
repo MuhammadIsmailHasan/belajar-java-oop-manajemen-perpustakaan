@@ -1,9 +1,7 @@
 package test;
 
 import entity.Book;
-import repository.BookRepository;
 import repository.BookRepositoryImpl;
-import service.BookService;
 import service.BookServiceImpl;
 
 public class BookTest {
@@ -11,8 +9,8 @@ public class BookTest {
     public static void main(String[] args) {
 //        testShowBook();
 //        testAddBook();
-        testRemoveBook();
-
+//        testRemoveBook();
+//        testCheckStock();
     }
     public static void testShowBook() {
         Book php = new Book();
@@ -95,8 +93,36 @@ public class BookTest {
 
         bookService.showBook();
         bookService.removeBook(3);
+        bookService.removeBook(0);
+        bookService.removeBook(7);
 
         bookService.showBook();
+    }
+
+    public static void testCheckStock() {
+        Book java = new Book();
+        java.setTitle("Belajar pemrograman java");
+        java.setStock(15);
+
+        Book js = new Book();
+        js.setTitle("Belajar pemrograman js");
+        js.setStock(16);
+
+        Book cplus = new Book();
+        cplus.setTitle("Belajar pemrograman cplus");
+        cplus.setStock(18);
+
+        BookRepositoryImpl bookRepository = new BookRepositoryImpl();
+        bookRepository.books[0] = java;
+        bookRepository.books[1] = js;
+        bookRepository.books[2] = cplus;
+
+        BookServiceImpl bookService = new BookServiceImpl(bookRepository);
+        bookService.showBook();
+        bookService.checkStock(1);
+        bookService.checkStock(3);
+        bookService.checkStock(6);
+        bookService.checkStock(0);
     }
 
 }

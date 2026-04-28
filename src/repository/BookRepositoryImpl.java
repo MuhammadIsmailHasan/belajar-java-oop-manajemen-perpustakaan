@@ -6,14 +6,23 @@ import entity.Book;
 public class BookRepositoryImpl implements BookRepository {
 
     /**
-     * public sementara untuk testing show
+     * it's temporary, just for test
      */
     public Book[] books = new Book[3];
-    private int index = 0;
 
     @Override
     public Book[] getAll() {
         return books;
+    }
+
+    @Override
+    public Book getByRegister(int registerNumber) {
+        for (Book book : books) {
+            if (book != null && book.getRegisterNumber() == registerNumber) {
+                return book;
+            }
+        }
+        return null;
     }
 
     private int getRegisterNumber() {
@@ -79,5 +88,12 @@ public class BookRepositoryImpl implements BookRepository {
             isSuccess = true;
         }
         return isSuccess;
+    }
+
+    @Override
+    public int checkStock(int number) {
+        int stock = books[number - 1].getStock();
+
+        return stock;
     }
 }
