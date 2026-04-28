@@ -15,9 +15,6 @@ public class Transaction {
 
     private TransactionStatus transactionStatus;
 
-    public Transaction() {
-    };
-
     public Transaction(int transactionNumber, Book book, Employee employee, TransactionStatus transactionStatus) {
         this.transactionNumber = transactionNumber;
         this.book = book;

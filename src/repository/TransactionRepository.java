@@ -5,9 +5,9 @@ import entity.Employee;
 import entity.Transaction;
 
 public interface TransactionRepository {
-    public void addPeminjaman(Book book, Employee employee);
+    void addPeminjaman(Book book, Employee employee);
 
-    public boolean returnPeminjaman(Transaction transaction);
+    boolean returnPeminjaman(Transaction transaction);
 
     Transaction getByNumber(int transactionNumber);
 

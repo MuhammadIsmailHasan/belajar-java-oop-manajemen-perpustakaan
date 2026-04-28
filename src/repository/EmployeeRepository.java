@@ -8,7 +8,7 @@ public interface EmployeeRepository {
 
     Employee getByNip(int nip);
 
-    public void save(Employee employee);
+    void save(Employee employee);
 
-    public boolean remove(int number);
+    boolean remove(int number);
 }

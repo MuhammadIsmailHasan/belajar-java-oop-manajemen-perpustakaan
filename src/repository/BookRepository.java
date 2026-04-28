@@ -8,9 +8,9 @@ public interface BookRepository {
 
     Book getByRegister(int registerNumber);
 
-    public void save(Book book);
+    void save(Book book);
 
-    public boolean remove(int number);
+    boolean remove(int number);
 
-    public int checkStock(int number);
+    int checkStock(int number);
 }

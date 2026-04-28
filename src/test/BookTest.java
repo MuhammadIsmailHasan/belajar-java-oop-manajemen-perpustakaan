@@ -45,10 +45,6 @@ public class BookTest {
         pyton.setTitle("Belajar pemrograman pyton");
         pyton.setStock(17);
 
-        Book cplus = new Book();
-        cplus.setTitle("Belajar pemrograman cplus");
-        cplus.setStock(18);
-
         Book css = new Book();
         css.setTitle("Belajar pemrograman css");
         css.setStock(19);
@@ -75,10 +71,6 @@ public class BookTest {
         Book pyton = new Book();
         pyton.setTitle("Belajar pemrograman pyton");
         pyton.setStock(17);
-
-        Book cplus = new Book();
-        cplus.setTitle("Belajar pemrograman cplus");
-        cplus.setStock(18);
 
         Book css = new Book();
         css.setTitle("Belajar pemrograman css");

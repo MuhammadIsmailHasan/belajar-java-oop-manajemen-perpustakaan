@@ -3,8 +3,6 @@ package repository;
 
 import entity.Employee;
 
-import java.util.Arrays;
-
 public class EmployeeRepositoryImpl implements EmployeeRepository {
 
     public Employee[] employees = new Employee[3];
