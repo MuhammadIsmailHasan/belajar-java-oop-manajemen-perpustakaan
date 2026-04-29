@@ -1,4 +1,4 @@
-package test;
+package test.service;
 
 import entity.Employee;
 import repository.EmployeeRepositoryImpl;
